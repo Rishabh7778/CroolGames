@@ -1,0 +1,71 @@
+<% layout('layouts/boilerplate') %>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+      <div class="card-shadow">
+        <div class="card-body" id="ss">
+          <h3 class="card-title" id="username">Add New Games</h3>
+
+          <form action="/games" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div>
+              <label class="form-label" for="games[title]">Enter Game Title</label>
+              <input class="form-control" type="text" id="games[title]" name="games[title]" required autofocus>
+              <div class="invalid-feedback">
+                Please provide a valid Game Title.
+              </div>
+              <div class="valid-feedback">
+                Nice.
+              </div>
+            </div>
+            <div>
+              <label class="form-label" for="games[description]">Enter Game Description</label>
+              <textarea class="form-control" id="games[description]" name="games[description]" required></textarea>
+              <div class="invalid-feedback">
+                Please provide a valid Game Description.
+              </div>
+              <div class="valid-feedback">
+                Nice.
+              </div>
+            </div>
+            <div>
+              <label class="form-label" for="games[category]">Enter Game Category</label>
+              <input class="form-control" type="text" id="games[category]" name="games[category]" required>
+              <div class="invalid-feedback">
+                Please provide a valid Game Category.
+              </div>
+              <div class="valid-feedback">
+                Nice.
+              </div>
+            </div>
+            <div>
+              <label class="form-label" for="image">Enter Game Images</label><br>
+              <div class="input-group">
+                <input type="file" class="form-control" id="image" name="image" aria-describedby="inputGroupFileAddon04" aria-label="Upload" multiple>
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid Game Image.
+              </div>
+              <div class="valid-feedback">
+                Nice.
+              </div>
+            </div>
+            <div>
+              <label class="form-label" for="gameFile">Enter Game File</label><br>
+              <div class="input-group">
+                <input type="file" class="form-control" id="gameFile" name="gameFile" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid Game File.
+              </div>
+              <div class="valid-feedback">
+                Nice.
+              </div>
+            </div>
+            <div class="d-grid mt-2">              
+              <button class="mb-2 btn btn-success">Submit</button>            
+            </div>
+          </form>
+                  
+        </div>
+      </div>
+    </div>
+  </div>

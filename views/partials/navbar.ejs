@@ -1,0 +1,68 @@
+<div class="sticky-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-8 mx-auto">
+                <h1 id="ee" class="text-center">CROOL GAMES</h1>
+            </div>
+        </div>
+    </div>
+    <div>
+        <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">CroolGames</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Games
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- Add query parameters for each category -->
+                                <li><a class="dropdown-item" href="/games?category=action">Action</a></li>
+                                <li><a class="dropdown-item" href="/games?category=adventure">Adventure</a></li>
+                                <li><a class="dropdown-item" href="/games?category=arcade">Arcade</a></li>
+                                <li><a class="dropdown-item" href="/games?category=fighting">Fighting</a></li>
+                                <li><a class="dropdown-item" href="/games?category=horror">Horror</a></li>
+                                <li><a class="dropdown-item" href="/games?category=puzzle">Puzzle</a></li>
+                                <li><a class="dropdown-item" href="/games?category=racing">Racing</a></li>
+                                <li><a class="dropdown-item" href="/games?category=shooting">Shooting</a></li>
+                                <li><a class="dropdown-item" href="/games?category=simulation">Simulation</a></li>
+                            </ul>
+                        </li>
+                        <% console.log('AdminN:', Admin); %>
+                        <% if (Admin) { %>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/games/new">Upload</a>
+                            </li>
+                        <% } %>
+                    </ul>
+
+                    <!-- Add the "ml-auto" class to move the following items to the right -->
+                    <ul class="navbar-nav ml-auto">
+                        <% if(!currentUser){ %>
+                            <li class="nav-item"><a class="active nav-link" aria-current="page" href="/login">Login</a>
+                            </li>
+                            <li class="nav-item"><a class="active nav-link" aria-current="page"
+                                    href="/register">Register</a>
+                            </li>
+                        <% } else { %>
+                            <li class="nav-item"><a class="active nav-link" aria-current="page"
+                                    href="/logout">LogOut</a></li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+

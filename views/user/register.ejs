@@ -1,0 +1,85 @@
+<% layout('layouts/boilerplate') %>
+  <div class="container justify-content-center align-item-center mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+        <div class="card-shadow">
+          <div class="card-body" id="ss">
+            <h1 class="card-title" id="username">Register</h1>
+            <form action="/register" method="post" class="validated-form" novalidate>
+              <div class="mt-2" id="username">
+                <label class="form-label" for="yy">Enter Username </label>
+                <input class="form-control " type="text" id="yy" name="username" required autofocus>
+                <div class="invalid-feedback ">
+                  Please provide a valid Username or Unique Username.
+                </div>
+                <div class="valid-feedback">
+                  Nice.
+                </div>
+              </div>
+              <div class="mt-2" id="emailField" style="display: none;">
+                <input class="form-control" type="hidden" id="ff" name="email" required>
+                <div class="invalid-feedback">
+                  Please provide a valid Gmail.
+                </div>
+                <div class="valid-feedback">
+                  Nice.
+                </div>
+              </div>
+              <div class="mt-2" id="username">
+                <label class="form-label" for="jj">Create Password</label>
+                <input class="form-control " type="password" id="jj" name="password" required>
+                <div class="invalid-feedback ">
+                  Please create Strong Password.
+                </div>
+                <div class="valid-feedback">
+                  Nice.
+                </div>
+              </div>
+              <div class="d-grid mt-2 " id="username">
+                <button class="mb-2 btn btn-success">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Generate a random email
+    function generateRandomEmail() {
+      const domain = "example.com"; // Change this to your desired domain
+      const username = Math.random().toString(36).substring(7); // Generate a random username
+      return username + "@" + domain;
+    }
+
+    // Auto-fill the email field with a random email when the page loads
+    document.addEventListener("DOMContentLoaded", function () {
+      const emailField = document.getElementById("ff");
+      emailField.value = generateRandomEmail();
+
+      // Show the email field after filling it with the random email
+      const emailFieldContainer = document.getElementById("emailField");
+      emailFieldContainer.style.display = "block";
+    });
+
+    // Optionally, you can also hide the email field when the user focuses on other fields or clicks the register button
+    // Example:
+    const usernameField = document.getElementById("yy");
+    const passwordField = document.getElementById("jj");
+    const registerButton = document.getElementById("registerButton");
+
+    usernameField.addEventListener("focus", function () {
+      const emailFieldContainer = document.getElementById("emailField");
+      emailFieldContainer.style.display = "none";
+    });
+
+    passwordField.addEventListener("focus", function () {
+      const emailFieldContainer = document.getElementById("emailField");
+      emailFieldContainer.style.display = "none";
+    });
+
+    registerButton.addEventListener("click", function () {
+      const emailFieldContainer = document.getElementById("emailField");
+      emailFieldContainer.style.display = "none";
+    });
+  </script>

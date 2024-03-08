@@ -1,0 +1,119 @@
+<% layout('layouts/boilerplate') %>
+<div class="container">
+    <link rel="stylesheet" href="/star.css">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3 mt-2">
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <% g.image.forEach((image, index) => { %>
+                        <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                          <img src="<%= image.url %>" class="d-block w-100" alt="Game Image">
+                        </div>
+                      <% }); %>
+                    </div>
+                    
+                    <!-- Navigation buttons -->
+                    <% if (g.image.length > 1) { %>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                        <% } %>
+                  </div>
+                  
+                  
+                
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= g.title %>
+                    </h5>
+                    <p class="card-text">
+                        <%= g.description %>
+                    </p>
+                    <p class="card-text">
+                        Author: <%= g.author.username %> <!-- Assuming g.author contains the author's username -->
+                    </p>
+                </div>
+                
+                <ul class="list-group list-group-flush">
+                    <a href="/games/<%= g.gameId %>/download" class="btn btn-success" download>Download</a>
+                </ul>
+                
+                               
+                <% if (currentUser && (g.author.equals(currentUser._id) || Admin)) { %>
+                    <div class="card-body justify-content-center d-flex">
+                        <a href="/games/<%= g._id %>/edit" class="card-link">
+                            <div class="btn btn-warning">
+                                Edit
+                            </div>
+                        </a>
+                        <form action="/games/<%= g._id %>?_method=DELETE" method="post" style="display: inline;">
+                            <button type="submit" class="card-link btn btn-danger mx-2">DELETE</button>
+                        </form>
+                    </div>
+                <% } %>
+            </div>
+            <div id="ss">
+                <% if (currentUser || (currentUser && Admin)) { %>
+                    <h4>Review</h4>
+                    <form action="/games/<%= g._id %>/review" method="post" class="mb-1 validated-form" novalidate>
+                        <div class="mb-1">
+                            <fieldset class="starability-basic">
+                                <legend>Rating:</legend>
+                                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1"
+                                    checked aria-label="No rating." />
+                                <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                                <label for="first-rate1" title="Terrible">1 star</label>
+                                <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                                <label for="first-rate2" title="Not good">2 stars</label>
+                                <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                                <label for="first-rate3" title="Average">3 stars</label>
+                                <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                                <label for="first-rate4" title="Very good">4 stars</label>
+                                <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                                <label for="first-rate5" title="Amazing">5 stars</label>
+                            </fieldset>
+                        </div>
+                        <div class="mb-3">
+                            <label for="review" class="form-label">Write your review</label>
+                            <textarea class="form-control form-control-sm no-resize" name="review[body]" id="review" cols="50" rows="3" required></textarea>
+                        </div>
+                        
+                        
+                        
+                        <button class="btn btn-success">Submit</button>
+                    </form>
+                <% } %>
+            </div>
+            <% for (let r of g.reviews) { %>
+                <div class="mb-3 card">
+                    <div class="card-body">
+                        <h6 class="card-subtitle text-muted">By <%= r.author.username %></h6>
+                        <p class="starability-result" data-rating="<%= r.rating %>"> </p>
+                        <p class="card-text">Review: <%= r.body %></p>
+                        <% if (currentUser && (currentUser._id.toString() === r.author._id.toString() || Admin)) { %>
+                            <form action="/games/<%= g.id %>/reviews/<%= r._id %>?_method=DELETE" method="post">
+                                <button class="btn btn-danger">DELETE</button>
+                            </form>
+                        <% } %>
+                    </div>
+                </div>
+            <% } %>
+                               
+        </div>
+        <div class="col-lg-4">
+            <div id="c">
+                <a href="https://www.flipkart.com/6bo/b5g/~cs-t24q3efv9b/pr?sid=6bo,b5g&collection-tab-name=Intel+Core+Gaming+14th+Gen&ocmpid=intelgaming_14thgen">
+                    <img src="https://plus.unsplash.com/premium_photo-1683288446478-d998f96592e0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGFkdmVydGlzZXxlbnwwfDF8MHx8fDA%3D"
+                        alt="..." id="d" class="img-fluid">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

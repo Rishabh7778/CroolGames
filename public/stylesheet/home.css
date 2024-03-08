@@ -1,0 +1,136 @@
+body {
+    height: 100vh;
+    background-image: url("uwp4255262.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#a {
+    height: 250px;
+    width: 400px;
+}
+
+#b {
+    height: 250px;
+    width: 400px;
+}
+
+#d {
+    margin-top: 5px;
+    width: 424px;
+    height: 429px;
+    border: 2px solid black;
+}
+
+.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #07252d;
+    /* Change the background color as needed */
+    z-index: 1000;
+    /* Ensure it's on top of other elements */
+}
+
+#f {
+    display: flex;
+    justify-content: center;
+}
+
+#ee {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    color: #0e3742;
+    outline: none;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+
+    0%,
+    18%,
+    20%,
+    50.1%,
+    60%,
+    65.1%,
+    80%,
+    90.1%,
+    92% {
+        color: #0e3742;
+        text-shadow: none;
+        /* Reset text-shadow */
+    }
+
+    18.1%,
+    20.1%,
+    30%,
+    50%,
+    60.1%,
+    65%,
+    80.1%,
+    90%,
+    92.1%,
+    100% {
+        color: #fff;
+        text-shadow: 0 0 10px #03bcf4,
+            0 0 20px #03bcf4,
+            0 0 40px #03bcf4,
+            0 0 80px #03bcf4,
+            0 0 160px #03bcf4;
+    }
+}
+
+#ff {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: #0c8eb3;
+    outline: none;
+}
+#ll {
+    border: 2px solid #070606;
+    background-color: white;
+}
+
+#nn {
+    /* margin-left: 0px; */
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+#hh-container {
+    max-height: 4.5em; /* Adjust to the number of lines you want to show */
+    overflow: hidden;
+}
+
+#hh {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Adjust to the number of lines you want to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#ss{
+    background-color: aliceblue;
+    border-radius: 3px;
+}
+#username{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+#bb{
+    border: 1px solid black;
+}
+.no-resize {
+    resize: none;
+}
+.category {
+    font-weight: bold;
+    color: white; /* Text color white */
+    background-color: #7a7171; /* Greyish color background */
+    padding: 5px 10px; /* Padding for the box */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block; /* Make the box inline with the text */
+}
+

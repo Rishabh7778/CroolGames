@@ -1,0 +1,25 @@
+<% if (success && success.length) { %>
+   <div id="success-alert" class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= success %>
+   </div>
+   <% } %>
+
+      <% if (error && error.length) { %>
+         <div id="error-alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+            <%= error %>
+         </div>
+         <% } %>
+
+            <script>
+               // Function to automatically hide the flash messages after 3 seconds
+               setTimeout(function () {
+                  var successAlert = document.getElementById("success-alert");
+                  var errorAlert = document.getElementById("error-alert");
+                  if (successAlert) {
+                     successAlert.remove();
+                  }
+                  if (errorAlert) {
+                     errorAlert.remove();
+                  }
+               }, 4000); // 3000 milliseconds = 3 seconds
+            </script>
