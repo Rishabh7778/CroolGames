@@ -36,6 +36,13 @@
   width: 30px;
 }
 
+
+.show_text{
+  background: rgba(0, 4, 6, 0.5); 
+  color: white;
+  font-size: 1.3rem;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio: 2),
 screen and (min-resolution: 192dpi) {
   .starability-result {

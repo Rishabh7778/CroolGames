@@ -1,13 +1,13 @@
 <% layout('layouts/boilerplate') %>
-<div class="container justify-content-center align-item-center mt-5 mb-5">
+<!-- <div class="container justify-content-center align-item-center mt-5 mb-5"> -->
   <div class="row">
     <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
       <div class="card-shadow">
         <div class="card-body" id="ss">
-          <h5 class="card-title" id="username">Login</h5>
+          <h5 class="card-title login text-light" id="username">Login</h5>
           <form action="/login" method="post" class="validated-form" novalidate >
             <div class="mt-2" id="username">
-              <label class="form-label" for="yy">Enter Username </label>
+              <label class="form-label usr text-light " for="yy">Enter Username </label>
               <input class="form-control" type="text" id="yy" name="username" autofocus required>
               <div class="invalid-feedback">
                 Please provide a valid Username or Unique Username.
@@ -18,7 +18,7 @@
             </div>
           
             <div class="mt-2" id="username">
-              <label class="form-label" for="jj">Enter Password</label>
+              <label class="form-label usr text-light" for="jj">Enter Password</label>
               <input class="form-control" type="password" id="jj" name="password" required>
               <div class="invalid-feedback">
                 Please create a Strong Password.
@@ -27,12 +27,12 @@
                 Nice.
               </div>
             </div>
-            <div class="d-grid mt-2 " id="username">              
-              <button class="mb-2 btn btn-success">Login</button>            
+            <div class="d-grid mt-2 lgnbtn" id="username">              
+              <button class="mb-2 btn btn-secondary fw-bolder fs-3">Login</button>            
           </div>
           </form>
         </div>
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->

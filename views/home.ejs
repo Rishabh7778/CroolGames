@@ -4,12 +4,12 @@
             <div class="col-12 col-md-8">
                 <div class="mb-2">
                     <form class="d-flex" role="search" action="/" method="GET">
-                        <input class="form-control me-2" type="search" placeholder="Search By Game Name"
+                        <input class="form-control me-2 fw-bolder" type="search" placeholder="Search By Game Name"
                             aria-label="Search" name="title" value="<%= searchQuery %>">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-dark fw-bolder text-light" type="submit">Search</button>
                     </form>
                     <% if (searchQuery) { %>
-                        <p>Showing results for: <%= searchQuery %>
+                        <p class="sq">Showing results for: <%= searchQuery %>
                         </p>
                         <% } %>
                 </div>                
@@ -57,7 +57,7 @@
                     </div>
                     <% } %>
             </div>
-            <div class="col-12 col-md-4">
+            <!-- <div class="col-12 col-md-4">
                 <div id="c" class="mb-3">
                     <a
                         href="https://www.flipkart.com/6bo/b5g/~cs-t24q3efv9b/pr?sid=6bo,b5g&collection-tab-name=Intel+Core+Gaming+14th+Gen&ocmpid=intelgaming_14thgen">
@@ -65,7 +65,7 @@
                             alt="..." id="d" class="img-fluid">
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <script>

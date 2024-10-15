@@ -196,6 +196,14 @@ ap.get("/", async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
+ap.get('/about', (req,res)=>{
+    res.render('about');
+})
+ap.get('/contact', (req, res)=>{
+    res.render('contact');
+})
+
 ap.get("/games", async (req, res) => {
     try {
         // Get the search query from the request parameters

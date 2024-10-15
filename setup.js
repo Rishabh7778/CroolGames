@@ -9,8 +9,8 @@ mongoose.connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
 
     // Create admin user with username, email, and isAdmin flag
     const adminUser = new User({
-      username: 'RaviBhai',
-      email: 'RaviBhai@gmail.com',
+      username: 'Rishabh',
+      email: 'Rishabh@gmail.com',
       isAdmin: true,
     });
 

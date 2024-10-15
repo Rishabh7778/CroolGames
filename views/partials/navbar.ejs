@@ -2,14 +2,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-8 mx-auto">
-                <h1 id="ee" class="text-center">CROOL GAMES</h1>
+                <h1 id="ee" class="text-center"><span>CROOL</span><span>GAMES</span></h1>
             </div>
         </div>
     </div>
     <div>
-        <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg border-bottom border-body nav-bg" data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">CroolGames</a>
+                <a class="navbar-brand fw-bolder fs-4 text-light" href="/">CroolGames</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -18,30 +18,36 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            <a class="nav-link active fw-bold fs-5 text-light btn-hover" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle fw-bold fs-5 text-light btn-hover" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Games
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- Add query parameters for each category -->
-                                <li><a class="dropdown-item" href="/games?category=action">Action</a></li>
-                                <li><a class="dropdown-item" href="/games?category=adventure">Adventure</a></li>
-                                <li><a class="dropdown-item" href="/games?category=arcade">Arcade</a></li>
-                                <li><a class="dropdown-item" href="/games?category=fighting">Fighting</a></li>
-                                <li><a class="dropdown-item" href="/games?category=horror">Horror</a></li>
-                                <li><a class="dropdown-item" href="/games?category=puzzle">Puzzle</a></li>
-                                <li><a class="dropdown-item" href="/games?category=racing">Racing</a></li>
-                                <li><a class="dropdown-item" href="/games?category=shooting">Shooting</a></li>
-                                <li><a class="dropdown-item" href="/games?category=simulation">Simulation</a></li>
+                                <li><a class="dropdown-item fw-bold fs-5 text-light btn-hover" href="/games?category=action">Action</a></li>
+                                <li><a class="dropdown-item fw-bold fs-5 text-light btn-hover" href="/games?category=adventure">Adventure</a></li>
+                                <li><a class="dropdown-item fw-bold fs-5 text-light btn-hover" href="/games?category=arcade">Arcade</a></li>
+                                <li><a class="dropdown-item fw-bold fs-5 text-light btn-hover" href="/games?category=fighting">Fighting</a></li>
+                                <li><a class="dropdown-item fw-bold fs-5 text-light btn-hover" href="/games?category=horror">Horror</a></li>
+                                <li><a class="dropdown-item fw-bold fs-5 text-light btn-hover" href="/games?category=puzzle">Puzzle</a></li>
+                                <li><a class="dropdown-item fw-bold fs-5 text-light btn-hover" href="/games?category=racing">Racing</a></li>
+                                <li><a class="dropdown-item fw-bold fs-5 text-light btn-hover" href="/games?category=shooting">Shooting</a></li>
+                                <li><a class="dropdown-item fw-bold fs-5 text-light btn-hover" href="/games?category=simulation">Simulation</a></li>
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold fs-5 text-light btn-hover" aria-current="page" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold fs-5 text-light btn-hover" aria-current="page" href="/contact">Contact us</a>
                         </li>
                         <% console.log('AdminN:', Admin); %>
                         <% if (Admin) { %>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/games/new">Upload</a>
+                                <a class="nav-link active fw-bold fs-5 text-light btn-hover" aria-current="page" href="/games/new">Upload</a>
                             </li>
                         <% } %>
                     </ul>
@@ -49,13 +55,13 @@
                     <!-- Add the "ml-auto" class to move the following items to the right -->
                     <ul class="navbar-nav ml-auto">
                         <% if(!currentUser){ %>
-                            <li class="nav-item"><a class="active nav-link" aria-current="page" href="/login">Login</a>
+                            <li class="nav-item btn-hover"><a class="active nav-link fw-bold fs-5 text-light btn-hover" aria-current="page" href="/login">Login</a>
                             </li>
-                            <li class="nav-item"><a class="active nav-link" aria-current="page"
+                            <li class="nav-item btn-hover mx-4"><a class="active nav-link fw-bold fs-5 text-light btn-hover" aria-current="page"
                                     href="/register">Register</a>
                             </li>
                         <% } else { %>
-                            <li class="nav-item"><a class="active nav-link" aria-current="page"
+                            <li class="nav-item btn-hover"><a class="active nav-link fw-bold fs-5 text-light btn-hover" aria-current="page"
                                     href="/logout">LogOut</a></li>
                         <% } %>
                     </ul>

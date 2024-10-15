@@ -1,9 +1,9 @@
 <% layout('layouts/boilerplate') %>
-<div class="container">
+<div class="container back-trans">
     <link rel="stylesheet" href="/star.css">
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="card mb-3 mt-2">
+    <div>
+        <div class="fwd">
+            <div class="card mb-3 mt-2 show_text">
                 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                       <% g.image.forEach((image, index) => { %>
@@ -35,13 +35,11 @@
                     <p class="card-text">
                         <%= g.description %>
                     </p>
-                    <p class="card-text">
-                        Author: <%= g.author.username %> <!-- Assuming g.author contains the author's username -->
-                    </p>
+                    
                 </div>
                 
                 <ul class="list-group list-group-flush">
-                    <a href="/games/<%= g.gameId %>/download" class="btn btn-success" download>Download</a>
+                    <a href="/games/<%= g.gameId %>/download" class="btn btn-info fw-bolder fs-3 text-light" download>Download</a>
                 </ul>
                 
                                
@@ -60,8 +58,8 @@
             </div>
             <div id="ss">
                 <% if (currentUser || (currentUser && Admin)) { %>
-                    <h4>Review</h4>
-                    <form action="/games/<%= g._id %>/review" method="post" class="mb-1 validated-form" novalidate>
+                    <h4 class="review">Review</h4>
+                    <form action="/games/<%= g._id %>/review" method="post" class="mb-1 validated-form formre" novalidate>
                         <div class="mb-1">
                             <fieldset class="starability-basic">
                                 <legend>Rating:</legend>
@@ -106,14 +104,14 @@
             <% } %>
                                
         </div>
-        <div class="col-lg-4">
+        <!-- <div class="col-lg-4">
             <div id="c">
                 <a href="https://www.flipkart.com/6bo/b5g/~cs-t24q3efv9b/pr?sid=6bo,b5g&collection-tab-name=Intel+Core+Gaming+14th+Gen&ocmpid=intelgaming_14thgen">
                     <img src="https://plus.unsplash.com/premium_photo-1683288446478-d998f96592e0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGFkdmVydGlzZXxlbnwwfDF8MHx8fDA%3D"
                         alt="..." id="d" class="img-fluid">
                 </a>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 
